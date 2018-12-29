@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-sm-4">
+        <div class="list-group">
+            <a (click)="selectedTodoIndex(i)" class="list-group-item list-group-item-action " *ngFor="let todo of todos; let i = index">
+              {{ todo.title }}
+              <button (click)="deleteTodo(todo._id, i)" class="btn btn-secondary float-right">Delete</button>
+            </a>
+          </div>
+    </div>
+    <div class="col-sm-8">
+        <div *ngIf="selectedTodo" class="card text-white bg-info mb-3" style="max-width: 50rem; height: 30rem;">
+            <div class="card-header">{{ selectedTodo.title }}</div>
+            <div class="card-body">
+              <h5 class="card-title">{{ selectedTodo.title }}</h5>
+              <p class="card-text">{{ selectedTodo.text }}</p>
+            </div>
+          </div>
+    </div>
+</div>
